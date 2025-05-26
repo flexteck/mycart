@@ -1,6 +1,6 @@
 import ProductList from '../features/products/ProductList';
 import styles from './MoreData.module.css';
-import type { Product } from '../types/product' 
+import type { Product } from '../types/product';
 
 type MoreDataProps = {
   products: Product[];

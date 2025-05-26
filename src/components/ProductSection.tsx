@@ -12,15 +12,16 @@ export default function ProductSection() {
   const [disableButton, setDisableButton] = useState(false);
 
   useEffect(() => {
-    if (products.length >= data?.total) {
+    if (products.length >= (data?.total || 0)) {
       setDisableButton(true);
     }
   }, [products, data]);
 
   return (
-    <section>
+    <section style={{ textAlign: 'center', padding: '2rem 1rem' }}>
       <h2>Featured Products</h2>
       {isFetching && <p>Loading...</p>}
+
       <MoreData
         products={products}
         count={count}

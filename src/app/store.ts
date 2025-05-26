@@ -4,8 +4,8 @@ import cartReducer from '../features/cart/cartSlice';
 
 export const store = configureStore({
   reducer: {
-    [productAPI.reducerPath]: productAPI.reducer,
-    cart: cartReducer,
+    [productAPI.reducerPath]: productAPI.reducer, // RTK Query
+    cart: cartReducer,                             // Local Redux state
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(productAPI.middleware),
