@@ -4,6 +4,7 @@ type Props = {
   product: Product;
 };
 
+
 export default function ProductCard({ product }: Props) {
   return (
     <div style={{ border: '1px solid #eee', padding: '1rem', borderRadius: '8px' }}>
@@ -17,3 +18,5 @@ export default function ProductCard({ product }: Props) {
     </div>
   );
 }
+
+

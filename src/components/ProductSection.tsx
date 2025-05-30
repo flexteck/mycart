@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useGetProductsQuery } from '../features/products/ProductApi';
+import { useGetProductsQuery } from '../features/products/ProductAPI';
 import MoreData from './MoreData';
 
 export default function ProductSection() {
@@ -12,8 +12,15 @@ export default function ProductSection() {
   const [disableButton, setDisableButton] = useState(false);
 
   useEffect(() => {
-    if (products.length >= (data?.total || 0)) {
+    console.log("Fetched data:", data); 
+    console.log("Derived products:", products);
+
+    if (!data) return;
+
+    if (products.length >= data.total) {
       setDisableButton(true);
+    } else {
+      setDisableButton(false);
     }
   }, [products, data]);
 
