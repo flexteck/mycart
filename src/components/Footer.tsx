@@ -53,7 +53,7 @@ export default function Footer() {
       </div>
 
       <div className={styles.bottom}>
-        <p>Made With ♥ By Flextech. All rights reserved.</p>
+        <p>Made With ♥ By Iyketech. All rights reserved.</p>
       </div>
     </footer>
   );

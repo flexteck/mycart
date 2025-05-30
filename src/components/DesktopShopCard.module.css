@@ -4,16 +4,21 @@
   display: flex;
   justify-content: center;
   padding: 4rem 1rem;
+  box-sizing: border-box;
 }
 
 .container {
   display: flex;
-  max-width: 1140px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 1146px; /* ✅ Target width */
   width: 100%;
-  gap: 16px;
-  align-items: stretch; /* 🟢 Makes both columns align in height */
+  height: 616px; /* ✅ Target height */
+  gap: 15px; /* ✅ Desired gap */
+  box-sizing: border-box;
 }
 
+/* Card Base */
 .card {
   position: relative;
   overflow: hidden;
@@ -27,37 +32,40 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
   border-radius: 10px;
 }
 
+/* Left column: Large vertical card */
 .large {
-  flex: 1;
-  aspect-ratio: 452 / 616;
+  flex: 0 0 452px; /* Fixed width */
   height: 100%;
 }
 
+/* Right section */
 .right {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  flex: 1;
+  gap: 15px;
+  height: 100%;
 }
 
+/* Top wide card */
 .top {
   flex: 1;
-  aspect-ratio: 680 / 300;
+  height: calc(50% - 7.5px); /* 50% of height minus half the gap */
 }
 
+/* Bottom row: two square-ish cards */
 .row {
   display: flex;
-  gap: 16px;
   flex: 1;
+  gap: 15px;
 }
 
 .row .card {
   flex: 1;
-  aspect-ratio: 1 / 1;
+  height: 100%;
 }
 
 /* Text Overlay */
@@ -86,4 +94,32 @@ a {
   font-weight: 600;
   text-decoration: underline;
   color: #252b42;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+    gap: 24px;
+  }
+
+  .large,
+  .top,
+  .row .card {
+    width: 100%;
+    height: auto;
+    aspect-ratio: auto;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .subtitle {
+    font-size: 12px;
+  }
 }

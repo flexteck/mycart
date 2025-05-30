@@ -1,9 +1,11 @@
 .container {
-  width: 100vw; /* full screen width */
+  width: 100%;
   max-width: 100%;
-  overflow-x: hidden; /* prevents horizontal scroll */
-  height: 916px; /* or 100vh if you want full screen height */
+  overflow-x: hidden; /* ✅ Prevents horizontal scroll */
   background: #ffffff;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  padding: 0;
+  margin: 0;
 }
