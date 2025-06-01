@@ -1,13 +1,16 @@
 .wrapper {
-  background: #23856d;
+  background: url(../assets/addtocart.png) no-repeat center center;
   color: white;
   padding: 4rem 1rem;
+  display: flex;
+  justify-content: center; /* ✅ Center horizontally */
+  align-items: center;
 }
 
 .content {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: center; /* ✅ Center horizontally */
+  align-items: center; /* ✅ Center vertically */
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
@@ -20,43 +23,76 @@
 }
 
 .label {
-  color: #fff;
+  max-width: 209px;
+  height: 24px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
   font-size: 14px;
-  font-weight: 600;
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+  text-align: center;
+  color: #23a6f0;
+  margin: 0 auto 0.5rem; /* ✅ Centers and spaces below */
 }
 
 .heading {
-  font-size: 28px;
-  font-weight: 800;
-  margin-bottom: 1rem;
-  color: #fff;
+  max-width: 571px; /* Responsive cap */
+  height: auto; /* Better for flexibility */
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 50px;
+  letter-spacing: 0.2px;
+  text-align: center;
+  color: #252b42;
+  margin: 0 auto 1rem; /*Center it horizontally */
 }
 
 .description {
-  font-size: 16px;
-  color: #f4f4f4;
-  margin-bottom: 1rem;
-  line-height: 1.6;
+  max-width: 447px; /* Constrain to Figma width */
+  height: auto; /* Let it grow if needed on small screens */
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+  text-align: center;
+  color: #737373;
+  margin: 0 auto 1rem; /* Center horizontally and add spacing */
 }
 
 .price {
-  font-size: 24px;
+  font-family: "Montserrat", sans-serif;
   font-weight: 700;
-  color: #fff;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0.1px;
+  text-align: center;
+  color: #23856d;
   margin-bottom: 1.5rem;
 }
 
 .button {
-  background: #fff;
-  color: #23856d;
-  padding: 0.75rem 1.5rem;
+  width: 292px;
+  height: 52px;
+  padding: 15px 40px;
   border: none;
-  border-radius: 4px;
-  font-weight: 600;
-  font-size: 16px;
+  border-radius: 5px;
+  background-color: #23a6f0;
+
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 0.2px;
+  text-align: center;
+  color: #ffffff;
+
+  cursor: pointer;
   transition: background 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .button:hover {
@@ -80,12 +116,38 @@
     flex-direction: column-reverse;
     text-align: center;
   }
+}
 
+@media (max-width: 768px) {
   .heading {
-    font-size: 22px;
+    font-size: 28px;
+    line-height: 36px;
+    max-width: 100%;
+    padding: 0 1rem;
   }
+}
 
+@media (max-width: 768px) {
   .price {
     font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .description {
+    font-size: 13px;
+    line-height: 18px;
+    padding: 0 1rem;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .button {
+    width: 100%;
+    max-width: 292px;
+    padding: 12px 24px;
+    font-size: 13px;
   }
 }

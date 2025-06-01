@@ -13,9 +13,6 @@ export default function CallToAction() {
           <p className={styles.price}>$16.48</p>
           <button className={styles.button}>Add to Cart</button>
         </div>
-        <div className={styles.image}>
-          <img src="https://via.placeholder.com/400x400" alt="Product" />
-        </div>
       </div>
     </section>
   );
